@@ -1,59 +1,54 @@
-#currently working env dependencies 
-Package              Version
--------------------- ---------
-absl-py              0.9.0
-astor                0.8.1
-audioread            2.1.8
-bokeh                0.12.5
-certifi              2018.8.24
-cffi                 1.11.5
-chardet              3.0.4
-cycler               0.10.0
-Cython               0.28.5
-decorator            4.4.2
-gast                 0.3.3
-google-pasta         0.2.0
-grpcio               1.27.2
-h5py                 2.8.0
-idna                 2.9
-Jinja2               2.11.1
-joblib               0.11
-Keras                2.0.0
-Keras-Applications   1.0.8
-Keras-Preprocessing  1.1.0
-kiwisolver           1.1.0
-librosa              0.4.2
-Markdown             3.2.1
-MarkupSafe           1.1.1
-matplotlib           3.2.1
-numpy                1.14.5
-pandas               0.23.4
-pip                  18.0
-protobuf             3.11.3
-PyAudio              0.2.11
-pycparser            2.20
-pydub                0.23.1
-pyparsing            2.4.6
-python-dateutil      2.8.1
-pytz                 2019.3
-PyYAML               5.3.1
-requests             2.23.0
-scikit-learn         0.19.0
-scipy                0.19.1
-setuptools           46.1.1
-six                  1.11.0
-sklearn              0.0
-sounddevice          0.3.15
-tensorboard          1.14.0
-tensorflow           1.14.0
-tensorflow-estimator 1.14.0
-termcolor            1.1.0
-Theano               0.9.0
-tornado              4.3
-tqdm                 4.43.0
-urllib3              1.25.8
-Werkzeug             1.0.0
-wheel                0.31.1
-wrapt                1.12.1
-
-
+absl-py==0.9.0
+astor==0.8.1
+audioread==2.1.8
+bokeh==0.12.5
+certifi==2018.8.24
+cffi==1.11.5
+chardet==3.0.4
+cycler==0.10.0
+Cython==0.28.5
+decorator==4.4.2
+gast==0.3.3
+google-pasta==0.2.0
+grpcio==1.27.2
+h5py==2.8.0
+idna==2.9
+Jinja2==2.11.1
+joblib==0.11
+Keras==2.0.0
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.0
+kiwisolver==1.1.0
+librosa==0.4.2
+Markdown==3.2.1
+MarkupSafe==1.1.1
+matplotlib==3.2.1
+numpy==1.14.5
+pandas==0.23.4
+pip==18.0
+protobuf==3.11.3
+PyAudio==0.2.11
+pycparser==2.20
+pydub==0.23.1
+pyparsing==2.4.6
+python-dateutil==2.8.1
+pytz==2019.3
+PyYAML==5.3.1
+requests==2.23.0
+scikit-learn==0.19.0
+scipy==0.19.1
+setuptools==46.1.1
+six==1.11.0
+sklearn==0.0
+sounddevice==0.3.15
+tensorboard==1.14.0
+tensorflow==1.14.0
+tensorflow-estimator==1.14.0
+termcolor==1.1.0
+Theano==0.9.0
+tornado==4.3
+tqdm==4.43.0
+urllib3==1.25.8
+Werkzeug==1.0.0
+wheel==0.31.1
+wrapt==1.12.1

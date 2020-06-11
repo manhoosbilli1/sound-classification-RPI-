@@ -37,6 +37,7 @@ def get_raspberry_stats():
     freq = None
     temp = None
     try:
+        result = firebase.put('/user','sound',target)
         with open('/sys/class/thermal/thermal_zone0/temp', 'r') as file:
             temp = int(file.read())
             temp /= 1000.
@@ -146,7 +147,6 @@ def start():
             timestamp = time.strftime('%H:%M:%S')
             logger.debug(msg.format(timestamp, np.round(time_spent / blocks_in_ms * 100, 1),
                                     time_spent, blocks_in_ms, PREDICTION_STEP, temp, freq, target))
-            result = firebase.put('/user','sound',target)
 
         time.sleep(0.5)
 

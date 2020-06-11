@@ -148,7 +148,8 @@ def start():
             logger.debug(msg.format(timestamp, np.round(time_spent / blocks_in_ms * 100, 1),
                                     time_spent, blocks_in_ms, PREDICTION_STEP, temp, freq, target))
 
-        time.sleep(0.5)
+
+        time.sleep(0.05)
 
 
 def classify(segments):
@@ -157,5 +158,4 @@ def classify(segments):
     X /= AUDIO_STD
     pred = model.predict(X)
     pred = np.average(pred, axis=0, weights=np.arange(len(pred)) + 1)
-    print(pred)
     return pred

@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+Created on Sat Jun 13 03:22:54 2020
+
+@author: shoai
+"""
+# -*- coding: utf-8 -*-
 from firebase import firebase
 firebase = firebase.FirebaseApplication('https://sound-classification-a041b.firebaseio.com', None)
 import collections
@@ -32,12 +38,10 @@ live_audio_feed = collections.deque(maxlen=1)
 
 model = None
 
-
 def get_raspberry_stats():
     freq = None
     temp = None
     try:
-        result = firebase.put('/user','sound',target)
         with open('/sys/class/thermal/thermal_zone0/temp', 'r') as file:
             temp = int(file.read())
             temp /= 1000.
@@ -136,6 +140,7 @@ def start():
             ])
             predictions[:, -1] = pred
             target = labels[np.argmax(pred)]
+	    
             # Clean up
             last_chunk[:] = step_audio[-CHUNK_SIZE:]
 
@@ -145,10 +150,13 @@ def start():
             blocks_in_ms = int(PREDICTION_STEP * BLOCK_SIZE / SAMPLING_RATE * 1000)
             msg = '[{}] {}% = {} ms / {} ms ({} blocks) - temp: {} | freq: {} ==> {}'
             timestamp = time.strftime('%H:%M:%S')
-            logger.debug(msg.format(timestamp, np.round(time_spent / blocks_in_ms * 100, 1),
-                                    time_spent, blocks_in_ms, PREDICTION_STEP, temp, freq, target))
-
-
+            if target == "dog" or target == "glass_breaking" or target == "laghing" and target != lastTarget:
+                logger.debug(msg.format(timestamp, np.round(time_spent / blocks_in_ms * 100, 1),
+                                        time_spent, blocks_in_ms, PREDICTION_STEP, temp, freq, target))
+                result = firebase.put('/user','sound',target)
+                lastTarget = target;
+                
+                
         time.sleep(0.05)
 
 
@@ -159,3 +167,4 @@ def classify(segments):
     pred = model.predict(X)
     pred = np.average(pred, axis=0, weights=np.arange(len(pred)) + 1)
     return pred
+

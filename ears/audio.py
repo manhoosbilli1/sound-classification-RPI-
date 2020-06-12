@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Jun 13 03:22:54 2020
-
-@author: shoai
-"""
-# -*- coding: utf-8 -*-
 from firebase import firebase
 firebase = firebase.FirebaseApplication('https://sound-classification-a041b.firebaseio.com', None)
 import collections

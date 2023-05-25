@@ -8,5 +8,5 @@ pydub
 sklearn
 sounddevice
 theano
-tornado==4.3
+tornado==6.3.2
 tqdm
